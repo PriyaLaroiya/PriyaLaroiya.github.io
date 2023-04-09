@@ -3087,29 +3087,6 @@ section.lazy-placeholder:after {
     width: 100% !important;
   }
 }
-.cid-tAFvBWTwit {
-  background: #ffffff;
-}
-.cid-tAFvBWTwit .image-block {
-  margin: auto;
-  width: 100% !important;
-}
-.cid-tAFvBWTwit .mbr-figure {
-  margin: 0 auto;
-}
-.cid-tAFvBWTwit figcaption {
-  position: relative;
-}
-.cid-tAFvBWTwit figcaption div {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-@media (max-width: 768px) {
-  .cid-tAFvBWTwit .image-block {
-    width: 100% !important;
-  }
-}
 .cid-tAFvD81HKe {
   background: #ffffff;
 }
