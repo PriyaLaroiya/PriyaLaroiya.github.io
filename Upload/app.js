@@ -40,7 +40,7 @@ function setProgress(target, duration) {
 // ─── Typewriter (Phase 1) ───────────────────────────────────────────
 const phrases = [
   'Reading your policy documents.',
-  'Comparing 340+ available options.',
+  'Comparing 34+ available options.',
   'Checking for deductible mismatches.',
   'Calculating your potential savings.',
 ];
@@ -166,13 +166,16 @@ document.addEventListener('click', (e) => {
 
   setTimeout(() => {
     if (qNum === 1) {
-      setProgress(35, 800); // 20 → 35
+      setProgress(30, 800); // 20 → 30
       goToQuestion(2);
     } else if (qNum === 2) {
-      setProgress(50, 800); // 35 → 50
+      setProgress(40, 800); // 30 → 40
       goToQuestion(3);
     } else if (qNum === 3) {
-      setProgress(65, 800); // 50 → 65
+      setProgress(55, 800); // 40 → 55
+      goToQuestion(4);
+    } else if (qNum === 4) {
+      setProgress(65, 800); // 55 → 65
       showCompletingStep();
     }
   }, 700);
@@ -222,7 +225,7 @@ function showResults() {
 // ─── Keyboard shortcuts for testing ──────────────────────────────────
 document.addEventListener('keydown', (e) => {
   const key = e.key;
-  if (key < '1' || key > '7') return;
+  if (key < '1' || key > '8') return;
 
   // Stop all timers
   typewriterActive = false;
@@ -279,11 +282,19 @@ document.addEventListener('keydown', (e) => {
       document.querySelector('.screen-content').classList.add('faded');
       document.getElementById('phase-2').classList.add('active');
       forceReveal('reveal-status');
-      document.getElementById('status-progress-fill').style.width = '50%';
+      document.getElementById('status-progress-fill').style.width = '40%';
       goToQuestionInstant(3);
       break;
 
-    case '6': // Completing
+    case '6': // Q4
+      document.querySelector('.screen-content').classList.add('faded');
+      document.getElementById('phase-2').classList.add('active');
+      forceReveal('reveal-status');
+      document.getElementById('status-progress-fill').style.width = '55%';
+      goToQuestionInstant(4);
+      break;
+
+    case '7': // Completing
       document.querySelector('.screen-content').classList.add('faded');
       document.getElementById('phase-2').classList.add('active');
       forceReveal('reveal-status');
@@ -293,7 +304,7 @@ document.addEventListener('keydown', (e) => {
       forceReveal('reveal-completing-sub');
       break;
 
-    case '7': // Results
+    case '8': // Results
       document.querySelector('.screen-content').classList.add('faded');
       document.getElementById('phase-3').classList.add('active');
       forceReveal('reveal-eyebrow');
